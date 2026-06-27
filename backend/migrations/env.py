@@ -44,8 +44,13 @@ def run_migrations_offline() -> None:
 
 
 def run_migrations_online() -> None:
+    # Get configuration from alembic.ini
+    configuration = config.get_section(config.config_ini_section, {})
+    # FORCIBLY override sqlalchemy.url from our settings
+    configuration["sqlalchemy.url"] = config.get_main_option("sqlalchemy.url")
+    
     connectable = engine_from_config(
-        config.get_section(config.config_ini_section, {}),
+        configuration,
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
     )

@@ -16,6 +16,13 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "postgresql://roadsos:roadsos_pass@localhost:5432/roadsos_db"
     AUTHORITY_SEED_PASSWORD: str = "ChangeMe123!"
 
+    @model_validator(mode="after")
+    def fix_postgres_scheme(self) -> "Settings":
+        """Fix Railway/Heroku postgres:// URLs for SQLAlchemy 2.0 compatibility"""
+        if self.DATABASE_URL and self.DATABASE_URL.startswith("postgres://"):
+            self.DATABASE_URL = self.DATABASE_URL.replace("postgres://", "postgresql://", 1)
+        return self
+
     # JWT
     SECRET_KEY: str = _INSECURE_DEFAULT_KEY
     ALGORITHM: str = "HS256"
