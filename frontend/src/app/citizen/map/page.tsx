@@ -9,7 +9,13 @@ import DynamicMap from '@/components/map/DynamicMap'
 export default function CitizenMapPage() {
   const [riskZones, setRiskZones] = useState([])
   const [myIncidents, setMyIncidents] = useState([])
-  const { latitude, longitude, permissionStatus, requestLocation } = useLocationStore()
+  const {
+  latitude,
+  longitude,
+  permissionStatus,
+  requestLocation,
+  setLocation,
+} = useLocationStore()
   const [zoom, setZoom] = useState(13)
 
   // Use the store location, or default to Delhi
