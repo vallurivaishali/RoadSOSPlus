@@ -22,7 +22,7 @@ print(f'EFFECTIVE DATABASE_URL: {masked_url}')
 
 # 2. Wait for Database
 echo "⏳ Waiting for PostgreSQL database to become available..."
-python app/scripts/pre_start.py
+python -m app.scripts.pre_start
 PRE_START_STATUS=$?
 if [ $PRE_START_STATUS -ne 0 ]; then
     echo "❌ pre_start.py FAILED with status $PRE_START_STATUS"

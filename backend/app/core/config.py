@@ -1,6 +1,7 @@
 from pydantic_settings import BaseSettings
 from pydantic import model_validator
 from functools import lru_cache
+import os
 
 _INSECURE_DEFAULT_KEY = "CHANGE_ME_IN_PRODUCTION_USE_OPENSSL_RAND_HEX_32"
 
@@ -13,7 +14,7 @@ class Settings(BaseSettings):
     ENVIRONMENT: str = "development"
 
     # Database
-    DATABASE_URL: str = "postgresql://roadsos:roadsos_pass@localhost:5432/roadsos_db"
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://roadsos:roadsos_pass@localhost:5432/roadsos_db")
     AUTHORITY_SEED_PASSWORD: str = "ChangeMe123!"
 
     @model_validator(mode="after")
@@ -58,9 +59,14 @@ class Settings(BaseSettings):
             )
         return self
 
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
+    from pydantic_settings import SettingsConfigDict
+    
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=True,
+        extra="ignore"
+    )
 
 
 @lru_cache()
