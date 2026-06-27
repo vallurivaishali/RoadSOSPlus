@@ -399,9 +399,9 @@ Building this platform provided extensive exposure to:
 
 ## 🧑‍💻 Author
 
-**[Your Name / Alias]**
-- **GitHub:** [*[https://github.com/vallurivaishali]*](#)
-- **LinkedIn:** [*[https://www.linkedin.com/in/valluri-vaishali-478039363?utm_source=share_via&utm_content=profile&utm_medium=member_android]*](#)
+**Vaishali Valluri**
+- **GitHub:** [*https://github.com/vallurivaishali*](#)
+- **LinkedIn:** [*https://www.linkedin.com/in/valluri-vaishali-478039363?utm_source=share_via&utm_content=profile&utm_medium=member_android*](#)
 
 <br />
 <div align="center">
