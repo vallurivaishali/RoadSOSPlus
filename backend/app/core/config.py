@@ -14,20 +14,24 @@ class Settings(BaseSettings):
     ENVIRONMENT: str = "development"
 
     # Database
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://roadsos:roadsos_pass@localhost:5432/roadsos_db")
+    DATABASE_URL: str = os.getenv(
+        "DATABASE_URL",
+        "postgresql://roadsos:roadsos_pass@localhost:5432/roadsos_db"
+    )
     AUTHORITY_SEED_PASSWORD: str = "ChangeMe123!"
 
     @model_validator(mode="after")
     def fix_postgres_scheme(self) -> "Settings":
-        """Fix Railway/Heroku postgres:// URLs for SQLAlchemy 2.0 compatibility"""
-        if self.DATABASE_URL and self.DATABASE_URL.startswith("postgres://"):
-            self.DATABASE_URL = self.DATABASE_URL.replace("postgres://", "postgresql://", 1)
+        if self.DATABASE_URL.startswith("postgres://"):
+            self.DATABASE_URL = self.DATABASE_URL.replace(
+                "postgres://", "postgresql://", 1
+            )
         return self
 
     # JWT
     SECRET_KEY: str = _INSECURE_DEFAULT_KEY
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440  # 24 hours
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
 
     # CORS
     FRONTEND_URL: str = "http://localhost:3000"
@@ -37,25 +41,23 @@ class Settings(BaseSettings):
     CLOUDINARY_API_KEY: str = ""
     CLOUDINARY_API_SECRET: str = ""
 
-    # Gemini AI
+    # Gemini
     GEMINI_API_KEY: str = ""
 
-    # OSM / Nominatim
+    # OSM
     NOMINATIM_USER_AGENT: str = "RoadSOS-Platform/1.0"
 
-    # Rate limiting
+    # Rate Limiting
     RATE_LIMIT_AUTH: str = "10/minute"
 
     @model_validator(mode="after")
     def validate_secret_key(self) -> "Settings":
-        """
-        Refuse to start with the insecure default SECRET_KEY.
-        Generate a safe key with: python -c "import secrets; print(secrets.token_hex(32))"
-        """
-        if self.ENVIRONMENT != "development" and self.SECRET_KEY == _INSECURE_DEFAULT_KEY:
+        if (
+            self.ENVIRONMENT != "development"
+            and self.SECRET_KEY == _INSECURE_DEFAULT_KEY
+        ):
             raise ValueError(
-                "SECRET_KEY must be set to a secure random value in non-development environments. "
-                "Generate one with: python -c \"import secrets; print(secrets.token_hex(32))\""
+                "SECRET_KEY must be set in non-development environments."
             )
         return self
 
@@ -63,11 +65,11 @@ class Settings(BaseSettings):
         env_file=".env",
         env_file_encoding="utf-8",
         case_sensitive=True,
-        extra="ignore"
+        extra="ignore",
     )
 
 
-@lru_cache()
+@lru_cache
 def get_settings() -> Settings:
     return Settings()
 
