@@ -78,7 +78,6 @@ Traditional road safety infrastructure is highly reactive, relying on delayed po
 | **Frontend Application** | [road-sos-plus-frno.vercel.app](https://road-sos-plus-frno.vercel.app) |
 | **Backend API** | [roadsosplus-production.up.railway.app](https://roadsosplus-production.up.railway.app) |
 | **API Documentation (Swagger)** | [roadsosplus-production.up.railway.app/api/docs](https://roadsosplus-production.up.railway.app/api/docs) |
-| **Demo Video** | *[Insert YouTube / Loom Link Here]* |
 
 ---
 
@@ -106,31 +105,6 @@ Traditional road safety infrastructure is highly reactive, relying on delayed po
 
 ### 📈 Analytics
 - **Data Snapshots:** A CRON-ready table structure (`analytics_snapshots`) designed to aggregate daily incident volumes, severely lowering dashboard query costs.
-
----
-
-## 📸 Screenshots
-
-<details>
-  <summary>Click to view application screenshots</summary>
-
-  <br/>
-
-  | Landing Page | Login & Auth |
-  |:---:|:---:|
-  | *[Insert Image: https://your-image-host.com/landing.png]* | *[Insert Image: https://your-image-host.com/login.png]* |
-  | *Modern hero section introducing the platform.* | *JWT-secured login with role separation.* |
-
-  | Citizen Dashboard | Incident Reporting |
-  |:---:|:---:|
-  | *[Insert Image: https://your-image-host.com/dashboard.png]* | *[Insert Image: https://your-image-host.com/reporting.png]* |
-  | *Personalized view showing nearby alerts.* | *Multi-step form with image uploads.* |
-
-  | Live Geospatial Map | Authority Triage |
-  |:---:|:---:|
-  | *[Insert Image: https://your-image-host.com/map.png]* | *[Insert Image: https://your-image-host.com/authority.png]* |
-  | *Leaflet integration displaying clustered risks.* | *Admin table to verify and resolve tickets.* |
-</details>
 
 ---
 
@@ -426,9 +400,8 @@ Building this platform provided extensive exposure to:
 ## 🧑‍💻 Author
 
 **[Your Name / Alias]**
-- **GitHub:** [*[Insert GitHub Profile Link]*](#)
-- **LinkedIn:** [*[Insert LinkedIn Profile Link]*](#)
-- **Portfolio:** [*[Insert Portfolio Link]*](#)
+- **GitHub:** [*[https://github.com/vallurivaishali]*](#)
+- **LinkedIn:** [*[https://www.linkedin.com/in/valluri-vaishali-478039363?utm_source=share_via&utm_content=profile&utm_medium=member_android]*](#)
 
 <br />
 <div align="center">
