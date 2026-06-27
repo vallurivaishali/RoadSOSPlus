@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import model_validator
 from functools import lru_cache
 import os
@@ -59,8 +59,6 @@ class Settings(BaseSettings):
             )
         return self
 
-    from pydantic_settings import SettingsConfigDict
-    
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
