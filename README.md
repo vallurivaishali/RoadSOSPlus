@@ -28,7 +28,6 @@
     <li><a href="#-key-highlights">Key Highlights</a></li>
     <li><a href="#-live-demo">Live Demo</a></li>
     <li><a href="#-features">Features</a></li>
-    <li><a href="#-screenshots">Screenshots</a></li>
     <li><a href="#-tech-stack">Tech Stack</a></li>
     <li><a href="#-system-architecture">System Architecture</a></li>
     <li><a href="#-database-design">Database Design</a></li>
