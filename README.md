@@ -20,7 +20,7 @@
 <br />
 
 <details>
-  <summary>📋 Table of Contents</summary>
+  <summary> Table of Contents</summary>
   <ol>
     <li><a href="#-project-overview">Project Overview</a></li>
     <li><a href="#-problem-statement">Problem Statement</a></li>
