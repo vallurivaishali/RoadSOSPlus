@@ -1,6 +1,6 @@
 <div align="center">
   
-# 🚦 RoadSOS+
+#  RoadSOS+
 
 **A Next-Generation AI-Powered Road Safety Monitoring & Incident Management Platform**
 
@@ -48,15 +48,15 @@
 
 ---
 
-## 📖 Project Overview
+##  Project Overview
 
 RoadSOS+ is a comprehensive, full-stack platform architected to modernize municipal road safety. It serves two distinct audiences: Citizens who report road hazards and accidents using location services, and Authorities who utilize a command dashboard to triage incidents, analyze AI-processed summaries, and monitor algorithmically generated geographic risk zones.
 
-## ❗ Problem Statement
+##  Problem Statement
 
 Traditional road safety infrastructure is highly reactive, relying on delayed post-accident reports or inefficient manual surveys. This allows severe infrastructural hazards (e.g., deep potholes, broken dividers, blind turns) to persist until fatal collisions occur. There is a critical engineering need for a proactive, crowdsourced platform that aggregates real-time data, processes it asynchronously via AI to categorize severity, and clusters incidents geospatially so municipalities can prioritize preventative maintenance.
 
-## ✨ Key Highlights
+##  Key Highlights
 
 - **Full-stack architecture:** Strongly typed REST API (FastAPI/Pydantic) communicating with a responsive SPA (Next.js/React).
 - **JWT Authentication:** Secure, stateless sessions stored locally and attached via Axios interceptors.
@@ -69,7 +69,7 @@ Traditional road safety infrastructure is highly reactive, relying on delayed po
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
 | Resource | Link |
 |----------|------|
@@ -80,34 +80,34 @@ Traditional road safety infrastructure is highly reactive, relying on delayed po
 
 ---
 
-## 🚀 Features
+##  Features
 
-### 👤 Citizen Features
+###  Citizen Features
 - **Geospatial Safety Map:** Real-time visualization of nearby accidents, hazards, and dynamically generated high-risk zones.
 - **Rich Incident Reporting:** Multi-step submission form with automatic GPS coordinate binding and image uploads via Cloudinary.
 - **Near-Miss Logging:** Dedicated endpoint for logging non-injury infrastructural hazards (e.g., severe waterlogging, missing signboards).
 - **Emergency Services Router:** Haversine distance calculations pointing to the nearest (mocked) emergency facilities.
 
-### 🏛️ Authority Features
+###  Authority Features
 - **Command Center Dashboard:** High-level statistical visualizations of city-wide incident resolution rates.
 - **Incident Triage Interface:** Data table to review citizen reports, verify AI severity ratings, and transition incident statuses (`pending` → `verified` → `resolved`).
 - **Risk Zone Management:** View and manage algorithmically clustered areas that surpass safety thresholds.
 - **Analytics Snapshots:** Daily aggregated metrics and statistical charts for data-driven municipal planning.
 
-### 🧠 AI Features
+###  AI Features
 - **Automated Triage:** Gemini LLM processes raw natural language and uploaded images to extract a structured JSON payload defining the incident type and prioritizing severity.
 - **Asynchronous Execution:** AI inference is decoupled into FastAPI `BackgroundTasks` to ensure sub-100ms API response times for the client.
 
-### 🗺️ Map Features
+###  Map Features
 - **Dynamic Leaflet Binding:** Custom React wrappers to bypass Next.js SSR constraints, ensuring smooth client-side interactions.
 - **Geolocation Fallbacks:** Browser native `navigator.geolocation` integration with IP-based geolocation fallbacks.
 
-### 📈 Analytics
+###  Analytics
 - **Data Snapshots:** A CRON-ready table structure (`analytics_snapshots`) designed to aggregate daily incident volumes, severely lowering dashboard query costs.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Domain | Technologies |
 |--------|--------------|
@@ -120,7 +120,7 @@ Traditional road safety infrastructure is highly reactive, relying on delayed po
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```mermaid
 graph TD
@@ -156,7 +156,7 @@ graph TD
 
 ---
 
-## 🗄️ Database Design
+##  Database Design
 
 ```mermaid
 erDiagram
@@ -219,7 +219,7 @@ erDiagram
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 <details>
   <summary>Click to expand folder tree</summary>
@@ -254,7 +254,7 @@ roadsosplus/
 
 ---
 
-## 🔌 API Overview
+##  API Overview
 
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
@@ -272,7 +272,7 @@ roadsosplus/
 
 ---
 
-## ⚙️ Environment Variables
+##  Environment Variables
 
 ### Backend (`backend/.env`)
 | Variable | Description |
@@ -290,7 +290,7 @@ roadsosplus/
 
 ---
 
-## 🐳 Running with Docker
+##  Running with Docker
 
 The fastest way to spin up the entire application architecture locally is via Docker Compose.
 
@@ -309,7 +309,7 @@ The fastest way to spin up the entire application architecture locally is via Do
 
 ---
 
-## 💻 Running without Docker
+##  Running without Docker
 
 1. **Database:** Ensure a local instance of PostgreSQL is running.
 2. **Backend:**
@@ -332,7 +332,7 @@ The fastest way to spin up the entire application architecture locally is via Do
 
 ---
 
-## ☁️ Deployment
+##  Deployment
 
 ### Backend (Railway)
 The backend is configured and deployed effortlessly on [Railway](https://railway.app/).
@@ -348,7 +348,7 @@ The Next.js application is hosted on [Vercel](https://vercel.com/).
 
 ---
 
-## 🛡️ Security
+##  Security
 
 - **JWT Authentication:** Completely stateless authentication. Tokens are stored locally and attached to Axios `Authorization` headers.
 - **Password Hashing:** Passwords are cryptographically hashed using the `bcrypt` algorithm via `passlib`. Plaintext passwords are never stored or logged.
@@ -358,7 +358,7 @@ The Next.js application is hosted on [Vercel](https://vercel.com/).
 
 ---
 
-## 🧠 Technical Challenges
+##  Technical Challenges
 
 1. **Leaflet Server-Side Rendering (SSR) Conflicts:**
    *Challenge:* Next.js attempts to pre-render pages on the server, but Leaflet directly manipulates the browser's `window` object, causing fatal build errors.
@@ -378,7 +378,7 @@ The Next.js application is hosted on [Vercel](https://vercel.com/).
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - **WebSockets:** Implement real-time bi-directional streaming so the Authority dashboard instantly receives new incidents without manual polling.
 - **PostGIS:** Migrate spatial data columns from standard `FLOAT` to PostGIS `GEOGRAPHY` types to allow for vastly superior indexing and complex bounding-box queries.
@@ -386,7 +386,7 @@ The Next.js application is hosted on [Vercel](https://vercel.com/).
 
 ---
 
-## 📚 Learning Outcomes
+##  Learning Outcomes
 
 Building this platform provided extensive exposure to:
 - Architecting decoupled RESTful systems using modern Python (FastAPI/Pydantic V2) and TypeScript (Next.js).
@@ -396,7 +396,7 @@ Building this platform provided extensive exposure to:
 
 ---
 
-## 🧑‍💻 Author
+##  Author
 
 **Vaishali Valluri**
 - **GitHub:** [*https://github.com/vallurivaishali*](#)
