@@ -50,16 +50,6 @@ Overview of user reports, nearby alerts, and quick actions.
 
 ---
 
-### Report Accident
-
-Submit accident details, location, and supporting images.
-
-<p align="center">
-  <img src="docs/screenshots/ReportAccident.png" width="900">
-</p>
-
----
-
 ### Report Near Miss
 
 Log hazards such as potholes, blind turns, or damaged roads before accidents occur.
